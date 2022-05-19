@@ -123,17 +123,17 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
@@ -162,6 +162,104 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://sejuneoh.github.io/2022/05/20/readmore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="David Oh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer Note">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Developer Note">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/05/20/readmore/" class="post-title-link" itemprop="url">Hexo 더 읽어보기 버튼 만들기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-05-20 02:34:34 / Modified: 02:49:34" itemprop="dateCreated datePublished" datetime="2022-05-20T02:34:34+09:00">2022-05-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Hexo/Hexo-readmore/" itemprop="url" rel="index"><span itemprop="name">Hexo readmore</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Hexo-더-읽어보기-버튼-사용하기"><a href="#Hexo-더-읽어보기-버튼-사용하기" class="headerlink" title="Hexo 더 읽어보기 버튼 사용하기"></a>Hexo 더 읽어보기 버튼 사용하기</h1><p>넥스트 테마를 사용하면서 일단… 많은 기능들을 찾아보고 사용하고 있지만 역시 hexo는 어렵다..  </p>
+<p>포스트 자체를 제목과 날짜만 표시하고싶은데 해당 방법을 찾지 못해서 일단 너무 긴 글은 더 읽어 보기 버튼을   만들려고한다.</p>
+<p>일단 config 파일에서 더 보기 버튼이 활성화 되어있는지 확인하자 </p>
+<hr>
+<h2 id="테마-config-yml-옵션-확인"><a href="#테마-config-yml-옵션-확인" class="headerlink" title="테마 _config.yml 옵션 확인"></a>테마 _config.yml 옵션 확인</h2><p>나는 Next 테마를 사용하고있는데 각자의 테마의 Document를 읽어 보고 설정하는 것을 권장한다.  </p>
+<p>..&#x2F;node_module&#x2F;hexo-theme-[테마이름]&#x2F;_config.yml 파일에서 아래와 같은 항목을 찾자</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Automatically excerpt description in homepage as preamble text.</span></span><br><span class="line"><span class="attr">excerpt_description:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read more button</span></span><br><span class="line"><span class="comment"># If true, the read more button will be displayed in excerpt section.</span></span><br><span class="line"><span class="attr">read_more_btn:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>read_more_btn: true 해당 항목이 true로 되어 있다면 활성화 되어있는 것 !!!  </p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/20/readmore/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -201,7 +299,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-05-20 02:05:03 / Modified: 02:13:10" itemprop="dateCreated datePublished" datetime="2022-05-20T02:05:03+09:00">2022-05-20</time>
+      <time title="Created: 2022-05-20 02:05:03 / Modified: 02:20:06" itemprop="dateCreated datePublished" datetime="2022-05-20T02:05:03+09:00">2022-05-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,84 +346,14 @@
 <li><p>변경은 순수함수로부터 변경 가능하다. 아래 reducer의 내용에서 확인하자</p>
 </li>
 </ul>
-<h3 id="Redux-in-Reducer"><a href="#Redux-in-Reducer" class="headerlink" title="Redux in Reducer???"></a>Redux in Reducer???</h3><p><img src="/../img/redux_2.png" alt="ReduxSytems"></p>
-<p>React에서 Reducer는 많이 들어봤다. useReducer() Hook에서  useState대신 사용하는<br>Hook이다. 상태값과 상태를 어떻게 변경할지 판단후 새로운 state를 반환하는 개념이 여기서도 똑같다. </p>
-<ol>
-<li>View에서 상태값이 변경되었다.</li>
-<li>변경된 상태값을 dispath가 받아 action 객체와 함께 store로 전달한다.</li>
-<li>store안에서  action에 맞는 state 값을 다시 UI로 전달한다.</li>
-</ol>
-<p>여기서 Reducer는 상태값과 이행되는 action에 대한 값으로 상태를 변경하여 리턴하는 역할을 전달한다.</p>
-<hr>
-<h2 id="use-Redux-Redux-사용하기"><a href="#use-Redux-Redux-사용하기" class="headerlink" title="use Redux(Redux 사용하기)"></a><strong>use Redux(Redux 사용하기)</strong></h2><hr>
-<h3 id="목표"><a href="#목표" class="headerlink" title="목표"></a>목표</h3><ol>
-<li>Redux, React-Redux 설치하기</li>
-<li>state를 저장하고있는 store 생성하기</li>
-<li>state를 변화주는 Reducer 만들기</li>
-<li>Provider 컴포넌트 설정해주기</li>
-<li>useSelector로 store의 state 값 가져오기</li>
-<li>이벤트 state 값 변경 및 적용하기</li>
-</ol>
-<hr>
-<ol>
-<li>설치</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install @reduxjs/toolkit react-redux</span><br><span class="line">$ npm i redux react-redux</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>state를 저장하고있는 store 만들기</li>
-</ol>
-<ul>
-<li>store는 state를 관리하는 객체로 변화가 생기면 안되니깐 const로 정의하자</li>
-<li>state를 새로 정의하하는 리턴하는 function 타입으로 가진다.</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(reducer)</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>Reducer 만들기</li>
-</ol>
-<ul>
-<li>역할 : 현재의 state를 가지고있고, action(어떻게 state를 변화를 줄 지)에 따른 state 값을 리턴한다.</li>
-<li>현재 객체의 불변성을 유자시켜줘야 한다. <ul>
-<li>why? : 현재 상태의 state의 변화를 계속 준다면 어디서 변화가 생겼는지  확인 할 수 없다. 기존 state값은 유지하고 새로운 state를 만들어서 전달한다.</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">reducer</span>(<span class="params">currentState, action</span>)&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">//현재 state가 없는 경우의 최초 값을 지정한다</span></span><br><span class="line"><span class="keyword">if</span>(currentState === <span class="literal">undefined</span>)&#123;</span><br><span class="line">  currnetState = &#123;</span><br><span class="line">    <span class="attr">num</span>: <span class="number">1</span>,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 리턴하는 state는 불변성에 의한 새로운 객체이다.</span></span><br><span class="line"><span class="keyword">const</span> newState = &#123;..<span class="property">currentState</span>&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// action에 따른 state 변경사항을 정의해준다</span></span><br><span class="line"><span class="keyword">if</span>(action.<span class="property">type</span> === <span class="string">&#x27;aciton&#x27;</span>)&#123;</span><br><span class="line">  <span class="comment">// state 변경 내용  작성</span></span><br><span class="line">  newState.<span class="property">number</span>++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newState</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>Provider 컴포넌트 설정해주기</li>
-</ol>
-<ul>
-<li>역할 : 어떤 컴포넌트에서 redux로 관리되고있는 state를 사용할지 정의해주는 역할이다.</li>
-<li>react-redux lib의 기능으로 다음과 같이 정의하자</li>
-<li>Component1,2,3에서 사용자가 정의한 state를 redux로 관리한다.</li>
-<li><strong>Provider 컴포넌트에는 어떤 store를 사용 할 것인지 Attribute로 정의해야한다.</strong></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;<span class="title class_">Provider</span>&#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"><span class="keyword">import</span> &#123; createStore &#125; <span class="keyword">from</span> <span class="string">&#x27;redux&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="title function_">createStore</span>(reducer)</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Component1</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Component2</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;<span class="name">Component3</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>useSelector로 store의 state 값 가져오기</li>
-</ol>
-<ul>
-<li>useSelector :  현재 필요한 state의 값을 가져온다.</li>
-<li>useSelector는 함수를 변수로 받고, 해당 함수를 통해서 현재의 state의 값을 받는다.</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span>, useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// store,  reducer 생략</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">App</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">return</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">Component1</span>/&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component1</span>(<span class="params"></span>)&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// state를 받아 리턴하는 함수 정의 </span></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">getNumberState</span>(<span class="params">state</span>) &#123;</span><br><span class="line">    <span class="comment">// 어떤 state 값을 가져올지 정의한다</span></span><br><span class="line">    <span class="keyword">return</span> state.<span class="property">number</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// state를 가져오는 함수를 변수로 전달하여 state값을 가져온다.</span></span><br><span class="line">  <span class="keyword">const</span> number = <span class="title function_">useSelector</span>((getState));</span><br><span class="line">  <span class="comment">// Arrow Function으로 정의하면 가독성이 좋아진다.</span></span><br><span class="line">  <span class="comment">// const number = useSelector((state) =&gt; state.number);</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 현재 상태의 state를 출력하는 부분</span></span><br><span class="line">  <span class="keyword">return</span>(</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;span&gt;&#123;number&#125;&lt;span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>이벤트 state 값 변경 및 적용하기(useDispatch())</li>
-</ol>
-<ul>
-<li>이벤트 발생 즉, U변경으로 인한 state값을 변경해서 사용하기</li>
-<li>useDispath는 함수를 리턴하고 리턴된 함수는 reducer를 호출한다.</li>
-<li>action object이고 object의 type으로 값을 설정하고 해당 설정에 대한 state 값에 변화를 준다.</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">reducer</span>(<span class="params">currentState, action</span>) &#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// action에 따른 state 변경사항을 정의해준다</span></span><br><span class="line">  <span class="keyword">if</span>(action.<span class="property">type</span> === <span class="string">&#x27;PLUS&#x27;</span>)&#123;</span><br><span class="line">    <span class="comment">// state 변경 내용  작성</span></span><br><span class="line">    newState.<span class="property">number</span> += <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> newState</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Component2</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Provider</span>, useSelector, useDispatch &#125; <span class="keyword">from</span> <span class="string">&#x27;react-redux&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> dispatch = <span class="title function_">useDispatch</span>();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        // action은 object이다.</span></span><br><span class="line"><span class="language-xml">       <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;dispatch(&#123;type: &#x27;PLUS&#x27;&#125;)&#125;&#125;&gt;(Number + 1) Button<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/20/redux/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -419,17 +447,14 @@
 <li>팀 프로젝트를 하는데, 팀장이 downstream에서 작업한거 PR해주세요..</li>
 </ul>
 <p>이게 무슨 말이지 했을 수도 있을 것 같아요, 일단 이 둘은 상대적인 개념입니다.<br>upStream은 메인으로 관리되고 있는 원격 저장소를 가르킵니다.<br>downStream은 하위에서 개발하고, 업데이트하고, 수정하는 환경을 가르키는 것이구요</p>
-<p>이해하기 쉽게 다음 두 상황을 보고 비교해보고 차이를 볼까요 ?</p>
-<ol>
-<li><p><em>내가 혼자 스스로 프로젝트를 github로 관리했을 때</em><br>여기서 upStream은 제가 만든 github의 remote(repo)를 말합니다. 그리고 down 스트림은 제가 작업하는 local환경이 됩니다.</p>
-</li>
-<li><p><em>협업에서 다른 사람의 프로젝트에서 Fork(상대방의 소스를 자신의 repo로)에서 작업할때</em>.<br>여기서는 upStream은 소스를 Fork해서 가져온 상대방의 원격 repo를 말하고, 자신의 관리하고 실행하는 repo및 환경을 downStream을 말합니다.</p>
-</li>
-</ol>
-<p>두 가지의 차이점이 느껴지시나요?<br>전자는 하나로 소스를 관리하고, 후자는 다른 사람의 소스를 가져와 협업을 할 때, 소스를 개발하는 환경이 차이가 있었죠 upStream, downStream은 상대적으로 소스가 관리 되고있는 Main 환경을 upstream을 말하고, 그 외 소스가 개발되고 하위에서 개발되는 환경을 말합니다.</p>
-<p>이해가 되셨을까요? 업로드, 다운로드의 개념 보다는 관리가 되고있는 환경의 상대적인 기준으로 나누어 표현합니다. 그래서 협업시에는 하위 downStream에서 main으로 소스를 관리하는 upStream 계정 브랜치를 나누어 소스를 업로드하는 개념의 branch와 개발 및 수정하는 branch를 나누어 역할을 정해서 사용합니다.</p>
-<p>조금은 헷갈리는 개념이라 공유하고 싶어 이렇게 작성해서 포스트에 올리는데 많은 도움이 되었으면 좋겠습니다.</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/04/13/FirstPost/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
