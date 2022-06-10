@@ -123,13 +123,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -162,6 +162,100 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://sejuneoh.github.io/2022/06/10/gitpush/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="David Oh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer Note">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Developer Note">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/06/10/gitpush/" class="post-title-link" itemprop="url">Git 강제로 Push하기</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-06-10 17:55:26 / Modified: 18:03:56" itemprop="dateCreated datePublished" datetime="2022-06-10T17:55:26+09:00">2022-06-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Git-Github/" itemprop="url" rel="index"><span itemprop="name">Git/Github</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="만들어진-Repositories-Git-연결-시-강제로-Push하기"><a href="#만들어진-Repositories-Git-연결-시-강제로-Push하기" class="headerlink" title="만들어진 Repositories Git 연결 시 강제로 Push하기"></a>만들어진 Repositories Git 연결 시 강제로 Push하기</h2><p>React로 작업을 하다 보면, Repo를 만들고, 필요 환경설정을 다한 Git을 Push할 때 오류가 발생했다.</p>
+<p>읽어보니, Github에서 만든 Repo의 내용을 가져오지 않고, Git의 내용을 업로드 하려고하니 생긴 권한 및 Pull 요구 사항이었다.   </p>
+<p>하지만, Git에는 내용이 없는 Repo라 강제적으로 Push를 해주려고했다.. (회사에서 쓰면… 불려갑니다) repo에 코드가 있다면, 소스 꼬입니다.</p>
+<p>–force라는 option을 붙여 사용하면 된다. </p>
+<h3 id="명령어"><a href="#명령어" class="headerlink" title="명령어"></a>명령어</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u [remoteName] [branchName] --force</span><br></pre></td></tr></table></figure>
+
+<p>강제로 push하여 환경을 넘겼고, 이제 다시 개발해야겠다.</p>
+<p>알아두면 쓸모있는 지식이니깐 참고하자~</p>
+
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/06/10/gitpush/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
