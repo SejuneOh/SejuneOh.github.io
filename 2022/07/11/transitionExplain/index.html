@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"sejuneoh.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="React 프로젝트를 진행하면서, React의 로직보다 Component의 상태에 따른 css 처리가 오히려 어려웠다.오늘은 버튼 click을 할 때, 필요 div tag의 내부 요소 및 tag를 자연스럽게 닫기 위해 transition에 대해 작성한다. Transition?Transition이란, CSS Property 속성과 duration 시간을 설정">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transition을 이용한 div tag 자연스럽게 닫기">
+<meta property="og:url" content="https://sejuneoh.github.io/2022/07/11/transitionExplain/index.html">
+<meta property="og:site_name" content="Developer Note">
+<meta property="og:description" content="React 프로젝트를 진행하면서, React의 로직보다 Component의 상태에 따른 css 처리가 오히려 어려웠다.오늘은 버튼 click을 할 때, 필요 div tag의 내부 요소 및 tag를 자연스럽게 닫기 위해 transition에 대해 작성한다. Transition?Transition이란, CSS Property 속성과 duration 시간을 설정">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-07-10T15:22:14.000Z">
+<meta property="article:modified_time" content="2022-07-10T15:55:38.944Z">
+<meta property="article:author" content="David Oh">
+<meta property="article:tag" content="HTML">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="TRANSITION">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://sejuneoh.github.io/2022/07/11/transitionExplain/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://sejuneoh.github.io/2022/07/11/transitionExplain/","path":"2022/07/11/transitionExplain/","title":"Transition을 이용한 div tag 자연스럽게 닫기"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Transition을 이용한 div tag 자연스럽게 닫기 | Developer Note</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Developer Note</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Transition"><span class="nav-number">1.</span> <span class="nav-text">Transition?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transition-%ED%8A%B9%EC%84%B1"><span class="nav-number">2.</span> <span class="nav-text">Transition 특성</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transition%EC%9D%84-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0-%EC%A0%81%EC%9A%A9%ED%95%98%EA%B8%B0"><span class="nav-number">3.</span> <span class="nav-text">Transition을 이해하고, 적용하기</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">David Oh</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://sejuneoh.github.io/2022/07/11/transitionExplain/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="David Oh">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Developer Note">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Transition을 이용한 div tag 자연스럽게 닫기 | Developer Note">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Transition을 이용한 div tag 자연스럽게 닫기
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-07-11 00:22:14 / Modified: 00:55:38" itemprop="dateCreated datePublished" datetime="2022-07-11T00:22:14+09:00">2022-07-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HTML-CSS/" itemprop="url" rel="index"><span itemprop="name">HTML/CSS</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>React 프로젝트를 진행하면서, React의 로직보다 Component의 상태에 따른 css 처리가 오히려 어려웠다.<br>오늘은 버튼 click을 할 때, 필요 div tag의 내부 요소 및 tag를 자연스럽게 닫기 위해 transition에 대해 작성한다.</p>
+<h2 id="Transition"><a href="#Transition" class="headerlink" title="Transition?"></a>Transition?</h2><p>Transition이란, CSS Property 속성과 duration 시간을 설정하여,<br>Property를 설정 시간동안 자연스럽게 보여주는 단축 속성입니다.</p>
+<h2 id="Transition-특성"><a href="#Transition-특성" class="headerlink" title="Transition 특성"></a><a target="_blank" rel="noopener" href="https://www.w3schools.com/css/css3_transitions.asp">Transition 특성</a></h2><p>전환 효과를 적용하려면 다음과 같이 정의 해야합니다. </p>
+<ul>
+<li>효과를 추가하려는 css 속성</li>
+<li>효과 지속시간</li>
+</ul>
+<p><strong>참고 :  transition 지속시간을 정의 하지 않으면 0으로 설정됩니다. 추가적으로 효과의 속성에 대한 값을 지정해야합니다.</strong></p>
+<ul>
+<li><p>전환 속도에 대한 시간 곡선을 지정할 수 있습니다.</p>
+<ul>
+<li>ease : 느린 시작으로 전환 효과를 지정한 다음 빠르게 지정한 다음 천천히 종료합니다(기본값).</li>
+<li>linear : 처음부터 끝까지 동일한 속도로 전환 효과를 지정합니다.</li>
+<li>ease-in : 느린 시작으로 전환 효과를 지정합니다.</li>
+<li>ease-out : 느린 끝으로 전환 효과를 지정합니다.</li>
+<li>ease-in-out : 느린 시작과 끝으로 전환 효과를 지정합니다.</li>
+<li>cubic-bezier(n,n,n,n) : 3차 베지어 함수에서 고유한 값을 정의할 수 있습니다.</li>
+</ul>
+</li>
+<li><p>단축 속성입니다. 필요 속성을 줄여서 사용할 수 있습니다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">transition-property</span>: width;</span><br><span class="line">  <span class="attribute">transition-duration</span>: <span class="number">2s</span>;</span><br><span class="line">  <span class="attribute">transition-timing-function</span>: linear;</span><br><span class="line">  <span class="attribute">transition-delay</span>: <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//단축 속성</span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">transition</span>: width <span class="number">2s</span> linear <span class="number">1s</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Transition을-이해하고-적용하기"><a href="#Transition을-이해하고-적용하기" class="headerlink" title="Transition을 이해하고, 적용하기"></a>Transition을 이해하고, 적용하기</h2><p>내가 하고싶은 내용은, Event에 따른 내부 요소까지 Transition을 이용하여 자연스럽게 안보이고 보이게 하고싶었다.  </p>
+<ul>
+<li>div tag<ul>
+<li>transition: height .5s, opacity .4s;</li>
+</ul>
+</li>
+<li>event 발생 시 style<ul>
+<li>opacity: 0</li>
+<li>height: 0</li>
+<li>overflow: hidden</li>
+</ul>
+</li>
+</ul>
+<p>위와 같이 높이가 0으로 변환되면서, 내부 요소는 hidden으로 가리고, 불투명도를 사용하여 자연스럽게 사라지는 모습으로 보이도록 변경하였다.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">transition</span>: height .<span class="number">5s</span>, opacity .<span class="number">4s</span>;</span><br><span class="line"></span><br><span class="line">  &amp;<span class="selector-class">.close</span>&#123;</span><br><span class="line">    <span class="attribute">opacity</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0px</span>;</span><br><span class="line">    <span class="comment">/* display : none, hidden 속성을 사용해서 가릴 수 도 있다. */</span></span><br><span class="line">    <span class="attribute">overflow</span>: hidden; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>위와 같이 W3C, MDN에서 찾아본 내용을 정리하였다. 많은 도움이 되었으면 좋겠다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/TRANSITION/" rel="tag"># TRANSITION</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/10/gitpush/" rel="prev" title="Git 강제로 Push하기">
+                  <i class="fa fa-chevron-left"></i> Git 강제로 Push하기
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">David Oh</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
